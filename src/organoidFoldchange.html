@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+
+    <!-- cdn for bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- cdn for jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- bootstrap javascript functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <!-- css file -->
+    <link rel="stylesheet" href="./static/css/OFC.css">
+    <!-- <script type="text/css" src="./css/OFC.css"></script> -->
+
+    <title>Welm Lab Tools</title>
+
+</head class="head">
+
+<body class="body">
+    <div class="container" id="container">
+        <!-- navigation bar -->
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" id="welmLab" href="/">WELM LAB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="home" href="/">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="research" href="/research">Research</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tools
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" id="tool1" href="/organoidFoldchange">Organoid Drug Screen
+                                Foldchange</a>
+                            <a class="dropdown-item" id="tool2" href="#">Another Tool</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" id="tool3" href="#">Another Tool</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="samples" href="/samples">Samples</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="about" href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                </form>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <h1 class="display-4" id="OFCTitle">Organoid Drug Screen Foldchange Tool</h1>
+            <p class="lead" id="OFCIntro">This tool was made to process EnVision plate readout files for the organoid
+                drug screen
+                project.</p>
+            <hr class="my-4">
+
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse"
+                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Click to Read Tool Instructions
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p id="OFCFunction">Tool calculates average of four reads per sample, then divides by
+                                average background for each plate- creating foldchange data for the Organoid Drug Screen
+                                which can be
+                                put
+                                into Graph Prism to produce heat map plots.</p>
+                            <h2 id="OFCRules">Important Rules</h2>
+                            <p id="OFCRule1">1.) Excel files must be saved to .csv</p>
+                            <p id="OFCRule1">1.) Must have at least 5 plate reads, and be in groups of 5 (ex. 5, 10, 15,
+                                etc.)</p>
+                            <p id="OFCRule1">1.) Read mush have 6 blanks in column 24.</p>
+                            <p id="OFCRule1">1.) Drug file must have 50 drugs.</p>
+                            <p id="OFCRule2">2.) The word "first" must be placed in front of the first desired read
+                                value for each plate.</p>
+                            <p id="OFCRule3">3.) The word "last" must be placed behind the last desired read value for
+                                each plate.</p>
+
+                            <!-- popover containing a picture of .csv file with "first" and "last" -->
+                            <!-- <button type="button" id="btnPopover" class="btn btn-md btn-danger" data-toggle="popover"
+                                title="Popover title" data-content=>Click to
+                                see example</button> -->
+                        </div>
+
+
+                    </div>
+
+                    <!-- start of second accordian -->
+                    <div class="accordion2" id="accordionExample2">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-secondary btn-lg btn-block" type="button"
+                                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                                        aria-controls="collapseTwo">
+                                        Click to See CSV File Example
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <!-- start of second accordian -->
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample2">
+                                <div class="card-body">
+                                    <img src="./static/pictures/firstLastExample.png" id="csvExample"
+                                        class="media-object" alt="Sample Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form id="reg_form" method="POST" action="#">
+
+                        <!-- find sample data file -->
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Sample Drug Data
+                                        File:</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input name="sampleFile" id="sampleFile" type="file" accept="text/plain"
+                                        class="custom-file-input" aria-describedby="inputGroupFileAddon01" />
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- find background file -->
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Background Data
+                                        File:</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input name="backgoundFile" id="backgroundFile" type="file" accept="text/plain"
+                                        class="custom-file-input" aria-describedby="inputGroupFileAddon01" />
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- choose file containing drugs used -->
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Drug List
+                                        File:</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input name="drugFile" id="drugFile" type="file" accept="text/plain"
+                                        class="custom-file-input" aria-describedby="inputGroupFileAddon01" />
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- name for output plates(output1, output2, etc.) -->
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Create Output File
+                                        Name(will create a
+                                        .csv):</span>
+                                </div>
+                                <input name="outputName" type="text" class="form-control" id="outputName"
+                                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+                                <!-- <label class="custom-file-label" for="inputGroupFile01">Name file</label> -->
+                            </div>
+                        </div>
+
+                        <!-- submit button -->
+                        <div clas="col-md-6 col-md-offset-2">
+                            <div class="0"></div>
+                            <button disabled="true" type="submit" class="btn btn-success" id="foldchangeButton">Create
+                                Foldchange Data</button>
+                        </div>
+
+                    </form>
+
+                    <!-- hidden <div> that displays a success message after button is clicked -->
+                    <div id="confirmation" class="alert alert-success" hidden>
+                        <span class="glyphicon glyphicon-star"></span>Your foldchange data files have been created and
+                        are in the Downloads Folder.
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer-card" class="card-footer text-muted">
+        <!-- <img class="boas-logo-footer card-img-top" src="/images/boas final.JPG" alt="Card image cap" width=300px> -->
+        <div class="card-body">
+            <p class="copyright" id="footer">© Copyright Welm Lab HCI 2020. All rights reserved</p>
+        </div>
+    </div>
+
+</body>
+
+<!-- javascript to control popover -->
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover(
+            {
+
+                placement: 'right',
+
+                trigger: 'click',
+
+                html: true,
+
+                content: '<div class="media"><a href="#" class="pull-left"><img src="./assets/pictures/firstLastExample.png" class="media-object" alt="Sample Image"></a></div>'
+
+            }
+
+
+        );
+    });
+</script>
+
+<!-- links javascript file to html file -->
+<script src="./static/FileSaver.js"></script>
+<!-- javascript for foldchange calculations -->
+<script src="./static/organoid_foldchange.js"></script>
+
+<!-- javascript for search feature -->
+<script src="./static/searchOrganoid.js"></script>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        // cdn that allows bootstrap <input type="file"> to display file name
+        bsCustomFileInput.init()
+
+        // document.getElementById("button").disabled = true;
+
+        //cdn that validates forms based on rules
+        var validator = $('#reg_form').bootstrapValidator({
+
+
+            // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            // property to handle submit click when validator "success" status   
+            submitHandler: function (validator, form, submitButton) {
+                console.log("success");
+                $('#reg_form').attr("hidden", true);
+                $("#confirmation").attr("hidden", false);
+                //dynamically create a button to return to tool
+                var r = $('<input/>').attr({
+                    type: "button",
+                    id: "field",
+                    onClick: "location.href='./organoidFoldchange'",
+                    value: 'Click to Return to Foldchange Tool'
+                });
+                $("#confirmation").append(r);
+            },
+            fields: {
+                sampleFile: {
+                    message: "A .csv file is required.",
+                    validators: {
+                        notEmpty: {
+
+                        },
+                        regexp: {
+                            regexp: /\b.csv\b/g,
+                            message: 'The file must be a .csv file'
+                        }
+                    }
+                },
+                backgoundFile: {
+                    message: "A .csv file is required.",
+                    validators: {
+                        notEmpty: {
+
+                        },
+                        regexp: {
+                            regexp: /\b.csv\b/g,
+                            message: 'The file must be a .csv file'
+                        }
+                    }
+                },
+                drugFile: {
+                    message: "A .csv file is required.",
+                    validators: {
+                        notEmpty: {
+
+                        },
+                        regexp: {
+                            regexp: /\b.csv\b/g,
+                            message: 'The file must be a .csv file'
+                        }
+                    }
+                },
+                outputName: {
+                    // message: "Please select a .csv file",
+                    validators: {
+                        notEmpty: {
+                            message: "A file name is required."
+                        },
+                        stringLength: {
+                            min: 2,
+                            max: 15,
+                            message: "File name must be between 2 and 15 characters long"
+                        }
+                        // regexp: {
+                        //     regexp: /\b.csv\b/g,
+                        //     message: 'the file must be .csv file'
+                        // }
+                    }
+                }
+            }
+        });
+    })
+
+</script>
+
+<script>
+    // When the user scrolls down 10px from the top of the document, resize the navbar's padding and the logo's font size
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            document.getElementById("navbar").style.padding = "8px 30px";
+            document.getElementById("welmLab").style.fontSize = "20px";
+        } else {
+            document.getElementById("navbar").style.padding = "30px 50px";
+            document.getElementById("welmLab").style.fontSize = "20px";
+        }
+    } 
+</script>
+
+<script>
+    //fade out when scroll below 200px
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            var currentScroll = $(this).scrollTop();
+
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                //Direction: Down
+                $(".navbar").fadeOut();
+            } else {
+                //Direction: Up
+                $(".navbar").fadeIn();
+            }
+        });
+    });
+</script>
+
+</html>

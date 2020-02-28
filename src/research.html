@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+
+    <!-- cdn for bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- cdn for jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- bootstrap javascript functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <title>Welm Lab Tools</title>
+</head>
+<body>
+    <div class="container">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" id="welmLab" href="/">WELM LAB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="home" href="/">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="research" href="/research">Research</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tools
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" id="tool1" href="/organoidFoldchange">Organoid Drug Screen
+                                Foldchange</a>
+                            <a class="dropdown-item" id="tool2" href="#">Another Tool</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" id="tool3" href="#">Another Tool</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="samples" href="/samples">Samples</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="about" href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                </form>
+            </div>
+        </nav>
+        <div class="jumbotron">
+            <div id="mainTitle">
+
+                <h1 class="display-4">Research</h1>
+            </div>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores vitae veritatis dolorum eius magni excepturi, ab qui quasi. Similique, suscipit necessitatibus! Nisi assumenda voluptate repellat id, maiores provident ratione tenetur!</p>
+        
+        </div>
+    </div>
+
+    <div id="footer-card" class="card-footer text-muted">
+        <!-- <img class="boas-logo-footer card-img-top" src="/images/boas final.JPG" alt="Card image cap" width=300px> -->
+        <div class="card-body">
+            <p class="copyright" id="footer">© Copyright Welm Lab HCI 2020. All rights reserved</p>
+        </div>
+    </div>
+
+</body>
+<!-- javascript for search feature -->
+<script src="./static/searchIndex.js"></script>
+
+<script>
+    // When the user scrolls down 10px from the top of the document, resize the navbar's padding and the logo's font size
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            document.getElementById("navbar").style.padding = "8px 30px";
+            document.getElementById("welmLab").style.fontSize = "20px";
+        } else {
+            document.getElementById("navbar").style.padding = "30px 50px";
+            document.getElementById("welmLab").style.fontSize = "20px";
+        }
+    } 
+</script>
+
+<script>
+    //fade out when scroll below 200px
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            var currentScroll = $(this).scrollTop();
+
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                //Direction: Down
+                $(".navbar").fadeOut();
+            } else {
+                //Direction: Up
+                $(".navbar").fadeIn();
+            }
+        });
+    });
+</script>  
+</body>
+</html>

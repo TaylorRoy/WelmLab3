@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+}
+
+.container {
+    margin-top: 150px;
+    padding: 0px; 
+}
+
+#mainTitle {
+    text-align:center;
+    font-size: 3.5rem;
+}
+
+.carousel-inner {
+    height: 500px;
+}
+
+#footer-card {
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width:100%;
+    margin-top: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.card-body {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+ .copyright {
+     margin-bottom: 0px;
+     text-align: center;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.help-block {
+    color: red;
+}
+
+#navbar {
+    
+    /* Large padding which will shrink on scroll (using JS) */
+    padding: 30px 50px;
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: inherit;
+    left: 50%;
+    transform: translateX(-50%); 
+    top: 0; /*At the top*/
+    z-index: 1;
+  }
+
+  #welmLab {
+      font-size: 20px;
+  }
+
