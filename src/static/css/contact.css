@@ -1,25 +1,40 @@
-body {
-    margin: 0;
-}
+
+    html {
+        /* To make use of full height of page*/
+        min-height: 100%;
+        margin: 0;
+        position: relative;
+    }
+    body {
+        /* height: 100%; */
+        margin: 0;            
+    }
+
 
 .container {
     margin-top: 100px;
-    padding: 0px; 
+    padding: 0px;
+     
 }
 
-#OFCTitle {
+#mainTitle {
     text-align:center;
     font-size: 3.5rem;
-  }
+}
+
+.carousel-inner {
+    height: 500px;
+}
 
 #footer-card {
-   
-  left: 0;
-  bottom: 0;
-  width:100%;
     margin-top: 50px;
     padding-top: 0px;
     padding-bottom: 0px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    clear: both;  
 }
 
 .card-body {
@@ -41,29 +56,19 @@ body {
     color: red;
 }
 
-.media-object {
-    height: 400px;
-}
-
-.popover {
-    max-width: inherit;
-    background-color: gray;
-}
-
 #navbar {
+    
     /* Large padding which will shrink on scroll (using JS) */
-    padding: 30px 50px; 
+    padding: 30px 50px;
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     position: fixed; /* Sticky/fixed navbar */
     width: inherit;
     left: 50%;
-    transform: translateX(-50%);
-    top: 0; /* At the top */
+    transform: translateX(-50%); 
+    top: 0; /*At the top*/
     z-index: 1;
   }
 
   #welmLab {
       font-size: 20px;
   }
-
-

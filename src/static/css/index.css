@@ -3,21 +3,16 @@ body {
 }
 
 .container {
-    margin-top: 150px;
+    margin-top: 100px;
     padding: 0px; 
 }
-
 #mainTitle {
     text-align:center;
     font-size: 3.5rem;
 }
 
-.carousel-inner {
-    height: 500px;
-}
-
 #footer-card {
-    position: fixed;
+   
   left: 0;
   bottom: 0;
   width:100%;
@@ -45,16 +40,24 @@ body {
     color: red;
 }
 
+.media-object {
+    height: 400px;
+}
+
+.popover {
+    max-width: inherit;
+    background-color: gray;
+}
+
 #navbar {
-    
     /* Large padding which will shrink on scroll (using JS) */
-    padding: 30px 50px;
+    padding: 30px 50px; 
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     position: fixed; /* Sticky/fixed navbar */
     width: inherit;
     left: 50%;
-    transform: translateX(-50%); 
-    top: 0; /*At the top*/
+    transform: translateX(-50%);
+    top: 0; /* At the top */
     z-index: 1;
   }
 
