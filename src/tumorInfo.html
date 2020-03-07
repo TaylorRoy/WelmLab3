@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- cdn for jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+
+  <!-- cdn for bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <!-- bootstrap javascript functionality -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <!-- css file -->
+  <link rel="stylesheet" href="./static/css/tumorInfo.css">
+
+  <title>Welm Lab Tools</title>
+</head>
+
+<body>
+  <div class="container">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" id="welmLab" href="/">WELM LAB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" id="home" href="/">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="research" href="/research">Research</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Tools
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" id="tool1" href="/organoidFoldchange">Organoid Drug Screen
+                Foldchange</a>
+              <a class="dropdown-item" id="tool2" href="#">Another Tool</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" id="tool3" href="#">Another Tool</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="samples" href="/samples">Samples</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="samples" href="/tumorInfo">Tumor Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="about" href="/contact">Contact</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
+          <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+        </form>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <div id="mainTitle">
+
+        <h1 class="display-4">Tumor Samples</h1>
+      </div>
+      <hr>
+
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse"
+                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Frequently Asked Questions
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+
+              <p id="OFCRule1">1.) Excel files must be saved to .csv</p>
+              <p id="OFCRule1">1.) Must have at least 5 plate reads, and be in groups of 5 (ex. 5, 10, 15,
+                etc.)</p>
+              <p id="OFCRule1">1.) Read mush have 6 blanks in column 24.</p>
+              <p id="OFCRule1">1.) Drug file must have 50 drugs.</p>
+              <p id="OFCRule2">2.) The word "first" must be placed in front of the first desired read
+                value for each plate.</p>
+              <p id="OFCRule3">3.) The word "last" must be placed behind the last desired read value for
+                each plate.</p>
+
+              <!-- popover containing a picture of .csv file with "first" and "last" -->
+              <!-- <button type="button" id="btnPopover" class="btn btn-md btn-danger" data-toggle="popover"
+                        title="Popover title" data-content=>Click to
+                        see example</button> -->
+            </div>
+
+
+          </div>
+
+          <!-- start of second accordian -->
+          <!-- <div class="accordion2" id="accordionExample2">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-secondary btn-lg btn-block" type="button"
+                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                                aria-controls="collapseTwo">
+                                Click to See CSV File Example
+                            </button>
+                        </h2>
+                    </div>
+
+                  
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingOne"
+                        data-parent="#accordionExample2">
+                        <div class="card-body">
+                            <img src="./static/pictures/firstLastExample.png" id="csvExample"
+                                class="media-object" alt="Sample Image">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+      </div>
+      <h2>Requirements</h2>
+      <p>1. You must fill out questionaire.<a href="./static/files/MTA Questionnaire Breast PDX.DOC" download>
+          <button type="button" class="btn btn-info">Click here to download questionnaire.</button>
+        </a></p>
+      <p>2. You must have a Material Transfer Agreement (MTA) that is less than 5 years old.</p>
+    </div>
+
+    <div class="container-fluid">
+      <table id="dtHorizontalExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+
+            <th>Select</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Extn.</th>
+            <th>E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><button id="HCI001" data=1>select</button></td>
+            <td class="1">HCI 001</td>
+            <td>Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td>$320,800</td>
+            <td>5421</td>
+            <td>t.nixon@datatables.net</td>
+          </tr>
+          <tr>
+            <td><button id="HCI002" data=2>select</button></td>
+            <td class="garrett">HCI 002</td>
+            <td>Winters</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td>63</td>
+            <td>2011/07/25</td>
+            <td>$170,750</td>
+            <td>8422</td>
+            <td>g.winters@datatables.net</td>
+          </tr>
+          <tr>
+            <td><button id="HCI003" data=3>select</button></td>
+            <td>HCI 003</td>
+            <td>Cox</td>
+            <td>Junior Technical Author</td>
+            <td>San Francisco</td>
+            <td>66</td>
+            <td>2009/01/12</td>
+            <td>$86,000</td>
+            <td>1562</td>
+            <td>a.cox@datatables.net</td>
+          </tr>
+          <tr>
+            <td><button id="HCI004" data=4>select</button></td>
+            <td>HCI 004</td>
+            <td>Kelly</td>
+            <td>Senior Javascript Developer</td>
+            <td>Edinburgh</td>
+            <td>22</td>
+            <td>2012/03/29</td>
+            <td>$433,060</td>
+            <td>6224</td>
+            <td>c.kelly@datatables.net</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+
+    <div id="tumorForm">
+      <h2>ORDER REQUESTS</h2>
+
+      <!-- all order data is dynamically added here with jQuery -->
+      <ol class="tumorOrderSummary">
+
+      </ol>
+
+      <h2>CONTACT INFORMATION</h2>
+
+      <form class="needs-validation" novalidate>
+        <div class="form-row">
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom01">First name<span class="red">*</span></label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+            <div class="invalid-feedback">
+              Please provide First Name
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom02">Last name<span class="red">*</span></label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="" required>
+            <div class="invalid-feedback">
+              Please provide Last Name
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label for="phoneNumber">Phone Number<span class="red">*</span></label>
+            <input type="phone" class="form-control" id="phoneNumber" placeholder="123-456-7890" value="" required>
+            <div class="invalid-feedback">
+              Please provide Last Name
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label for="validationCustomUsername">Email<span class="red">*</span></label>
+            <div class="input-group">
+              <input type="email" class="form-control" id="validationCustomUsername" placeholder="Email"
+                aria-describedby="inputGroupPrepend" value="" required>
+              <div class="invalid-feedback">
+                Please provide a valid email address.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Insititute/Company<span class="red">*</span></label>
+          <input type="text" class="form-control" id="inputCompany" placeholder="Insitute/Company Name" required>
+          <div class="invalid-feedback">
+            Please provide an institute or company name.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address<span class="red">*</span></label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+          <div class="invalid-feedback">
+            Please provide an address 1.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <div class="invalid-feedback">
+            Please provide an address 2.
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationCustom03">City<span class="red">*</span></label>
+            <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+            <div class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom04">State<span class="red">*</span></label>
+            <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom05">Zip<span class="red">*</span></label>
+            <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="validationCustom06">Comments</label>
+          <textarea class="form-control" id="validationCustom06" rows="3"
+            placeholder="Write additional information here..."></textarea>
+        </div>
+
+        <!-- find questionnaire file -->
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Questionnaire
+                File:<span class="red">*</span></span>
+            </div>
+            <div class="custom-file">
+              <input name="questionFile" id="questionFile" type="file" accept="text/plain" class="custom-file-input"
+                aria-describedby="inputGroupFileAddon01" required />
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- find mta file -->
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon02">Material Transfer Agreement
+                File (less than 5 years old):<span class="red">*</span></span>
+            </div>
+            <div class="custom-file">
+              <input name="mtaFile" id="mtaFile" type="file" accept="text/plain" class="custom-file-input"
+                aria-describedby="inputGroupFileAddon02" required />
+              <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions<span class="red">*</span>
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+
+        <!-- submit order button -->
+        <button type="submit" class="btn btn-success" id="submitOrder">Submit Order</button>
+        <p><span class="red">* means required</span></p>
+      </form>
+    </div>
+
+    <!-- hidden <div> that displays a success message after button is clicked -->
+    <div id="confirmation" class="alert alert-success" hidden>
+      <span class="glyphicon glyphicon-star"></span>Your tumor sample order has been submitted.
+      <button class="btn btn-secondary" id="confirmationButton">Click to return to Tumor Sample Order Form</button>
+    </div>
+    <div id="failedMessage" class="alert alert-danger" hidden>
+      <span class="glyphicon glyphicon-star"></span>Your tumor sample order was not successful. Please fill out all
+      fields highlighted in red.
+    </div>
+  </div>
+
+
+
+  <div id="footer-card" class="card-footer text-muted">
+    <!-- <img class="boas-logo-footer card-img-top" src="/images/boas final.JPG" alt="Card image cap" width=300px> -->
+    <div class="card-body">
+      <p class="copyright" id="footer">© Copyright Welm Lab HCI 2020. All rights reserved</p>
+    </div>
+  </div>
+
+</body>
+<!-- javascript for search feature -->
+<script src="./static/searchIndex.js"></script>
+<script src="./static/tumorInfo.js"></script>
+
+<script>
+  // When the user scrolls down 10px from the top of the document, resize the navbar's padding and the logo's font size
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+      document.getElementById("navbar").style.padding = "8px 30px";
+      document.getElementById("welmLab").style.fontSize = "20px";
+    } else {
+      document.getElementById("navbar").style.padding = "30px 50px";
+      document.getElementById("welmLab").style.fontSize = "20px";
+    }
+  } 
+</script>
+
+<script>
+  //fade out when scroll below 200px
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      var currentScroll = $(this).scrollTop();
+
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        //Direction: Down
+        $(".navbar").fadeOut();
+      } else {
+        //Direction: Up
+        $(".navbar").fadeIn();
+      }
+    });
+  });
+</script>
+
+<script>
+  //javascript to create horizontal scrolling table
+  $(document).ready(function () {
+    $('#dtHorizontalExample').DataTable({
+      "scrollX": true
+    });
+    $('.dataTables_length').addClass('bs-select');
+  });
+</script>
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict';
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            console.log("in fail")
+            event.preventDefault();
+            event.stopPropagation();
+            $("#failedMessage").attr("hidden", false);
+          }
+          if (form.checkValidity() === true) {
+            event.preventDefault();
+            $("#failedMessage").attr("hidden", true);
+            $('#tumorForm').attr("hidden", true);
+            $("#confirmation").attr("hidden", false);
+            document.getElementById('validationCustom*').value = ''
+          }
+          form.classList.add('was-validated');
+
+        }, false);
+      });
+    }, false);
+  })();
+</script>
+
+<script>
+  //javascript to unhide form after successful order submission
+  $(document).ready(function () {
+    $("#confirmationButton").on("click", function () {
+      $('#tumorForm').attr("hidden", false);
+      $("#confirmation").attr("hidden", true);
+    })
+  })
+</script>
+
+
+<script type="text/javascript">
+//api call to send tumor sample order via sendgrid to PRR- david lum (David.Lum@hci.utah.edu)
+  $(document).ready(function () {
+    document.getElementById("submitOrder").onclick = function () {
+      //get input ids and create object
+      let contactData = {
+        first_name: $("#inputFirstName").val().trim(),
+        last_name: $("#inputLastName").val().trim(),
+        email: $("#inputEmail").val().trim(),
+        phone: $("#inputPhoneNumber").val().trim(),
+        message: $("#inputMessage").val().trim()
+      }
+
+      $.post("/api/tumorOrder", contactData)
+        .then(function (res) {
+          console.log(res)
+          if (res.status === 200) {
+            console.log(res.message)
+          }
+        })
+        .catch(function (err) {
+          console.log(err)
+        })
+      // alert("Your message was sucessfully sent.  We will contact you soon.  Thanks!");
+    }
+  });
+
+</script>
+</body>
+
+</html>

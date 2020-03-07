@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+}
+
+.container {
+    margin-top: 100px;
+    padding: 0px; 
+}
+#mainTitle {
+    text-align:center;
+    font-size: 3.5rem;
+}
+
+#scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /* white-space: nowrap; */
+}
+
+.col {
+    display: inline-block;
+}
+  
+
+#footer-card {
+    left: 0;
+    bottom: 0;
+    width:100%;
+    margin-top: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.card-body {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+ .copyright {
+     margin-bottom: 0px;
+     text-align: center;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.help-block {
+    color: red;
+}
+
+.media-object {
+    height: 400px;
+}
+
+.popover {
+    max-width: inherit;
+    background-color: gray;
+}
+
+#navbar {
+    /* Large padding which will shrink on scroll (using JS) */
+    padding: 30px 50px; 
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: inherit;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0; /* At the top */
+    z-index: 1;
+  }
+
+  #welmLab {
+      font-size: 20px;
+  }
+
+  .tumorOrderSummary {
+      min-height: 200px;
+      /* border: 3px;
+      border-style: solid;
+      border-color: black; */
+      background-color: lightgray;
+  }
+
+  .red {
+      color: red;
+  }
+
+  .dtHorizontalVerticalExampleWrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    }
+    #dtHorizontalVerticalExample th, td {
+    white-space: nowrap;
+    }
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting:before,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_asc_disabled:after,
+    table.dataTable thead .sorting_asc_disabled:before,
+    table.dataTable thead .sorting_desc:after,
+    table.dataTable thead .sorting_desc:before,
+    table.dataTable thead .sorting_desc_disabled:after,
+    table.dataTable thead .sorting_desc_disabled:before {
+    bottom: .5em;
+    }

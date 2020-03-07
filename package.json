@@ -1,0 +1,35 @@
+{
+  "name": "welmlab3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^6.5.4",
+    "bs-custom-file-input": "^1.3.2",
+    "convert-excel-to-json": "^1.6.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "file-system": "^2.2.2",
+    "mongoose": "^5.9.3",
+    "morgan": "^1.9.1",
+    "node-cmd": "^3.0.0",
+    "path": "^0.12.7",
+    "require": "^2.4.20",
+    "sendgrid": "^5.2.3",
+    "xlsx-to-json": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaylorRoy/WelmLab3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TaylorRoy/WelmLab3/issues"
+  },
+  "homepage": "https://github.com/TaylorRoy/WelmLab3#readme"
+}
