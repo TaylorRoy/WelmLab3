@@ -17,6 +17,10 @@ body {
     /* white-space: nowrap; */
 }
 
+.jumbotron {
+    margin-bottom: 0px;
+}
+
 .col {
     display: inline-block;
 }
@@ -75,14 +79,46 @@ body {
       font-size: 20px;
   }
 
-  .tumorOrderSummary {
-      min-height: 200px;
-      /* border: 3px;
-      border-style: solid;
-      border-color: black; */
+  .headerTitle {
+      padding-top: 15px;
+  }
+
+  .grey {
       background-color: lightgray;
   }
 
+  .tumorOrderSummary {
+      min-height: 200px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top:15px;
+      padding-bottom:15px;
+  }
+
+  #listTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #listDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .totalCostFlex {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .totalCostDiv {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 15px;
+    }
+    
   .red {
       color: red;
   }

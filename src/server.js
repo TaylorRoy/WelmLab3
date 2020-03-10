@@ -5,10 +5,11 @@ const path = require('path');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const sgMail = require('@sendgrid/mail');
-var keys = require('../keys')
+var keys = require('../keys');
 
 // console.log(keys.sendgrid.id);
 // console.log(keys.sendgrid.secret);
+
 
 var app = express();
 //set port
@@ -56,15 +57,14 @@ app.get("/tumorInfo", function (req, res) {
   res.sendFile(path.join(__dirname, "./tumorinfo.html"));
 });
 
-
-
+//send message with sendgrid
 app.post('/api/tumorOrder', function (req, res) {
   sgMail.setApiKey(keys.sendgrid.secret);
   const msg = {
       to: 'tbroy@hotmail.com',
       from: req.body.email,
       // from: 'tbroy@hotmail.com',
-      subject: 'Tumor Sample Order Website',
+      subject: 'Tumor Sample Order from Website',
       text: req.body.message, 
       // text: 'data test',
       html: '<strong>' + req.body.first_name + " " + req.body.last_name + " requested: " + req.body.message + "  I can be contacted at: " + req.body.phone + '</strong>',
