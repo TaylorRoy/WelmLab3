@@ -24,6 +24,34 @@ body {
 .col {
     display: inline-block;
 }
+
+.pos {
+    background-color: lightpink;
+}
+
+.green {
+    background-color: #c1e8c1;
+}
+
+.yellow {
+    background-color: lightyellow;
+}
+
+.sameSample {
+    background-color: #979899;
+}
+
+.brightYellow {
+    background-color: yellow;
+}
+
+.patientInfo {
+    background-color: lightsalmon;
+}
+
+.pdxInfo {
+    background-color: #ffc145;
+}
   
 
 #footer-card {
@@ -122,6 +150,14 @@ body {
   .red {
       color: red;
   }
+
+  .blueText {
+    color: blue;
+}
+
+.greenText {
+    color: green;
+}
 
   .dtHorizontalVerticalExampleWrapper {
     max-width: 600px;
