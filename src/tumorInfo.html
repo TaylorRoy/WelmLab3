@@ -80,7 +80,7 @@
       </div>
       <hr>
       <h2>Requirements</h2>
-      <p>1. You must have a Material Transfer Agreement (MTA) that is less than 5 years old.</p>
+      <p>1. You must provide a Material Transfer Agreement (MTA) that is less than 5 years old.</p>
       <p>2. You must fill out all required fields in order form.</p>
       <p>3. You must select at least ONE sample before you can submit order.</p>
       <hr>
@@ -92,7 +92,7 @@
             <h2 class="mb-0">
               <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse"
                 data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                If you do not have an MTA
+                If You Need An MTA
               </button>
             </h2>
           </div>
@@ -100,7 +100,7 @@
 
           <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample2">
             <div class="card-body">
-              <h2>To Get a New MTA</h2>
+              <h2>How to Get a New MTA</h2>
               <p>If you do not have an MTA you must fill out questionaire.<a
                   href="./static/files/MTA Questionnaire Breast PDX.DOC" download>
                   <button type="button" class="btn btn-info">Click here to download questionnaire.</button>
@@ -128,15 +128,12 @@
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
 
-              <p id="OFCRule1">1.) Excel files must be saved to .csv</p>
-              <p id="OFCRule1">1.) Must have at least 5 plate reads, and be in groups of 5 (ex. 5, 10, 15,
-                etc.)</p>
-              <p id="OFCRule1">1.) Read mush have 6 blanks in column 24.</p>
-              <p id="OFCRule1">1.) Drug file must have 50 drugs.</p>
-              <p id="OFCRule2">2.) The word "first" must be placed in front of the first desired read
-                value for each plate.</p>
-              <p id="OFCRule3">3.) The word "last" must be placed behind the last desired read value for
-                each plate.</p>
+              <p id="OFCRule1">1.) How much does each sample cost?  Answer: $750/sample plus shipping.</p>
+              <p id="OFCRule1">2.) How much does shipping cost?  Answer:</p>
+              <p id="OFCRule1">3.) What if I don't have an MTA that is 5 years old or less?  Answer: Look above FAQs at How to Get a New MTA .</p>
+              <p id="OFCRule1">4.) </p>
+              <p id="OFCRule2">5.) </p>
+              <p id="OFCRule3">6.) </p>
             </div>
           </div>
         </div>
@@ -222,7 +219,7 @@
             <td class="pos">pos</td>
             <td class="pos">pos</td>
             <td>neg</td>
-            <td>Yes</td>
+            <td class="yellow">Yes</td>
             <td><span class="red">ERBB2; </span><span class=""><span class="blueText">PIK3CA; </span> </span><span class="red">TP53</span></td>
             <td><a href="https://hci-bio-cbioportal.hci.utah.edu/login.jsp" target="_blank">https://hci-bio-cbioportal.hci.utah.edu/login.jsp</a></td>
             <td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113986" target="_blank">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113986</a></td>
@@ -370,7 +367,7 @@
             <td>Pretreated</td>
             <td class="pos">pos</td>
             <td class="pos">pos</td>
-            <td class="pos">neg</td>
+            <td>neg</td>
             <td class="pos">pos</td>
             <td class="pos">pos</td>
             <td>neg</td>
@@ -645,7 +642,7 @@
             <td>in progress</td>
             <td>in progress</td>
             <td>Yes</td>
-            <td></td>
+            <td>HCI-027BR(birinapant resistant); Figure SX</td>
             <td></td>
           </tr>
           <tr>
@@ -720,7 +717,7 @@
             <td>in progress</td>
             <td>in progress</td>
             <td>in progress</td>
-            <td></td>
+            <td>Yes</td>
             <td>HCI-032EI(estrogen independent) Figure S38</td>
             <td></td>
           </tr>
@@ -845,10 +842,10 @@
             <td>Pretreated</td>
             <td class="pos">pos</td>
             <td class="pos">pos</td>
+            <td class="green">pos</td>
             <td class="pos">pos</td>
             <td class="pos">pos</td>
-            <td class="pos">pos</td>
-            <td class="pos">pos</td>
+            <td class="green">pos</td>
             <td class="yellow">No</td>
             <td>in progress</td>
             <td>in progress</td>
@@ -883,7 +880,7 @@
             <td>Native</td>
             <td>neg</td>
             <td>neg(1%)</td>
-            <td class="pos">pos</td>
+            <td class="green">pos</td>
             <td>neg</td>
             <td></td>
             <td></td>
@@ -967,7 +964,7 @@
             <td>in progress</td>
             <td>in progress</td>
             <td>in progress</td>
-            <td>Yes</td>
+            <td></td>
             <td></td>
             <td></td>
           </tr>
@@ -986,7 +983,7 @@
             <td>in progress</td>
             <td>in progress</td>
             <td>in progress</td>
-            <td>Yes</td>
+            <td></td>
             <td></td>
             <td></td>
           </tr>
@@ -1016,7 +1013,7 @@
             <td>Native</td>
             <td class="pos">pos</td>
             <td class="pos">pos</td>
-            <td class="pos">neg</td>
+            <td>neg</td>
             <td class="pos">pos</td>
             <td></td>
             <td></td>
@@ -1119,14 +1116,14 @@
       <div class="form-row">
         <div class="col-md-3 mb-3">
           <label for="inputFirstName">First name<span class="red">*</span></label>
-          <input type="text" class="form-control" id="inputFirstName" placeholder="First name" required>
+          <input type="text" class="form-control" id="inputFirstName" placeholder="First name" pattern="[A-Za-z]{2,30}" required>
           <div class="invalid-feedback">
             Please provide First Name
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="inputLastName">Last name<span class="red">*</span></label>
-          <input type="text" class="form-control" id="inputLastName" placeholder="Last name" value="" required>
+          <input type="text" class="form-control" id="inputLastName" placeholder="Last name" pattern="[A-Za-z]{2,30}" value="" required>
           <div class="invalid-feedback">
             Please provide Last Name
           </div>
@@ -1134,9 +1131,9 @@
 
         <div class="col-md-3 mb-3">
           <label for="phoneNumber">Phone Number<span class="red">*</span></label>
-          <input type="phone" class="form-control" id="phoneNumber" placeholder="123-456-7890" value="" required>
+          <input type="tel" class="form-control" id="phoneNumber" placeholder="123-456-7890" value="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
           <div class="invalid-feedback">
-            Please provide Last Name
+            Please provide phone number
           </div>
         </div>
 
@@ -1153,21 +1150,21 @@
       </div>
       <div class="form-group">
         <label for="inputCompany">Insititute/Company<span class="red">*</span></label>
-        <input type="text" class="form-control" id="inputCompany" placeholder="Insitute/Company Name" required>
+        <input type="text" class="form-control" id="inputCompany" placeholder="Insitute/Company Name" pattern="[A-Za-z0-9 ]{2,30}" required>
         <div class="invalid-feedback">
           Please provide an institute or company name.
         </div>
       </div>
       <div class="form-group">
         <label for="inputPO">PO Number<span class="red">*</span></label>
-        <input type="text" class="form-control" id="inputPO" placeholder="Insitute/Company Name" required>
+        <input type="text" class="form-control" id="inputPO" placeholder="PO Number" pattern=".{5,}" required>
         <div class="invalid-feedback">
           Please provide a PO Number.
         </div>
       </div>
       <div class="form-group">
         <label for="inputAddress1">Address<span class="red">*</span></label>
-        <input type="text" class="form-control" id="inputAddress1" placeholder="1234 Main St" required>
+        <input type="text" class="form-control" id="inputAddress1" placeholder="1234 Main St" pattern="[A-Za-z0-9 ]{2,30}" required>
         <div class="invalid-feedback">
           Please provide an address 1.
         </div>
@@ -1182,21 +1179,21 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="inputCity">City<span class="red">*</span></label>
-          <input type="text" class="form-control" id="inputCity" placeholder="City" required>
+          <input type="text" class="form-control" id="inputCity" placeholder="City" pattern="[A-Za-z ]{2,30}" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="inputState">State<span class="red">*</span></label>
-          <input type="text" class="form-control" id="inputState" placeholder="State" required>
+          <input type="text" class="form-control" id="inputState" placeholder="State" pattern="[A-Za-z ]{2,30}" required>
           <div class="invalid-feedback">
             Please provide a valid state.
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="inputZip">Zip<span class="red">*</span></label>
-          <input type="text" class="form-control" id="inputZip" placeholder="Zip" required>
+          <input type="text" class="form-control" id="inputZip" placeholder="Zip" pattern="[0-9]{5}" required>
           <div class="invalid-feedback">
             Please provide a valid zip.
           </div>

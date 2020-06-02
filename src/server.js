@@ -25,13 +25,13 @@ app.use(express.json());
 //tell express where to serve static JS,CSS files from.
 app.use("/static", express.static('./static'));
 
-mongoose.connect("mongodb://localhost/tumorInfo", { useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost/tumorInfo", { useNewUrlParser: true});
 
-mongoose.connection.once("open", function(){
-  console.log("MongoDB Connection Successful.");
-}).on("error", function(error){
-  console.log("MongoDB Connection Error", error);
-})
+// mongoose.connection.once("open", function(){
+//   console.log("MongoDB Connection Successful.");
+// }).on("error", function(error){
+//   console.log("MongoDB Connection Error", error);
+// })
 
 //ROUTES
 app.get("/", function (req, res) {
@@ -58,23 +58,23 @@ app.get("/tumorInfo", function (req, res) {
 });
 
 //send message with sendgrid
-app.post('/api/tumorOrder', function (req, res) {
-  sgMail.setApiKey(keys.sendgrid.secret);
-  const msg = {
-      to: 'tbroy@hotmail.com',
-      from: req.body.email,
-      // from: 'tbroy@hotmail.com',
-      subject: 'Tumor Sample Order from Website',
-      text: req.body.message, 
-      // text: 'data test',
-      html: '<strong>' + req.body.first_name + " " + req.body.last_name + " requested: " + req.body.message + "  I can be contacted at: " + req.body.phone + '</strong>',
-  };
-  sgMail.send(msg).then(response => {
-      res.send({status:200, message:"We'll hit you up"})
-  }).catch(err => {
-      res.send({err:err})
-  })
-})
+// app.post('/api/tumorOrder', function (req, res) {
+//   sgMail.setApiKey(keys.sendgrid.secret);
+//   const msg = {
+//       to: 'tbroy@hotmail.com',
+//       from: req.body.email,
+//       // from: 'tbroy@hotmail.com',
+//       subject: 'Tumor Sample Order from Website',
+//       text: req.body.message, 
+//       // text: 'data test',
+//       html: '<strong>' + req.body.first_name + " " + req.body.last_name + " requested: " + req.body.message + "  I can be contacted at: " + req.body.phone + '</strong>',
+//   };
+//   sgMail.send(msg).then(response => {
+//       res.send({status:200, message:"We'll hit you up"})
+//   }).catch(err => {
+//       res.send({err:err})
+//   })
+// })
 
 app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
